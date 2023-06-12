@@ -1,0 +1,17 @@
+// src/components/WeatherList/WeatherList.module.scss
+
+.weatherPageList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  
+    .cityList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+  

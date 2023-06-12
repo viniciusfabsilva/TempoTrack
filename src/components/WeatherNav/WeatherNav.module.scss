@@ -1,0 +1,19 @@
+// src/components/NavBar/NavBar.module.scss
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+  
+    a {
+      color: white;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
