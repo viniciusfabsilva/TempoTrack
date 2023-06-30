@@ -22,7 +22,7 @@ interface WeatherPageProps {
   onAddCity: (city: string) => void;
 }
 
-const WeatherPage: React.FC<WeatherPageProps> = ({ onAddCity }) => {
+const WeatherPage: React.FC<WeatherPageProps> = ({onAddCity}) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   const fetchWeatherData = async (city: string) => {

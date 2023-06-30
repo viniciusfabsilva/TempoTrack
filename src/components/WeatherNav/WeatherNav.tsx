@@ -8,6 +8,7 @@ const WeatherNav: React.FC = () => {
     return (
         <>
             <nav className={styles.navBar}>
+                <a href="/list"><h1>Tempo Track</h1></a>
                 <a href="/search">Buscar Cidades</a>
                 <a href="/list">Minhas Cidades</a>
             </nav>

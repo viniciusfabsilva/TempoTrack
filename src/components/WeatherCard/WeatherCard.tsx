@@ -11,14 +11,28 @@ interface WeatherCardProps {
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ city, temperature, description, icon, onAddCity, onRemoveCity }) => {
+
+  const getIcon = () => {
+    const getIconObj: {[key: string]: string} = {
+      '01d': 'src/assets/sol.png',
+      '01n': 'src/assets/lua-crescente.png',
+    }
+    return getIconObj[icon] || '../assets/default.png'; 
+  }
+  
   return (
     <div className={styles.weatherCard}>
-      <h2>{city}</h2>
-      <img src={`http://openweathermap.org/img/w/${icon}.png`} alt={description} />
-      <p>{description}</p>
-      <p>{temperature}°C</p>
-      {onAddCity && <button onClick={onAddCity}>Adicionar à lista</button>}
-      {onRemoveCity && <button onClick={onRemoveCity}>Remover da lista</button>}
+      <div className={styles.items}>
+        <img src={getIcon()} alt={description} />
+      </div>
+      <div className={styles.CityDescription}>
+        <h2>{city}</h2>
+        <p>{description}</p>
+        <p>{temperature}°C</p>
+        {onAddCity && <button className={styles.addButton} onClick={onAddCity}>Adicionar</button>}
+        {onRemoveCity && <button className={styles.removeButton} onClick={onRemoveCity}>Remover</button>}
+      </div>
+
     </div>
   );
 };
