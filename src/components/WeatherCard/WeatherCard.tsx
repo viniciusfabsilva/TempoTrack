@@ -14,8 +14,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ city, temperature, descriptio
 
   const getIcon = () => {
     const getIconObj: {[key: string]: string} = {
-      '01d': 'src/assets/sol.png',
-      '01n': 'src/assets/lua-crescente.png',
+      '01d': '/assets/sol.png',
+      '01n': '/assets/lua-crescente.png',
+      '04n': '/assets/nublado.png',
     }
     return getIconObj[icon] || '../assets/default.png'; 
   }
@@ -28,7 +29,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ city, temperature, descriptio
       <div className={styles.CityDescription}>
         <h2>{city}</h2>
         <p>{description}</p>
-        <p>{temperature}°C</p>
+        <p>{Math.round(temperature)}°C</p>
         {onAddCity && <button className={styles.addButton} onClick={onAddCity}>Adicionar</button>}
         {onRemoveCity && <button className={styles.removeButton} onClick={onRemoveCity}>Remover</button>}
       </div>
